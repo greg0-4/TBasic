@@ -1,0 +1,37 @@
+
+label menu
+cls
+print Welcome to my loop tests!
+print (1) While True Loop
+print (2) For Loop
+get choice
+
+if choice == 1 then
+  goto whileLoop
+endif
+
+if choice == 2 then
+  goto forSetup
+endif
+
+
+label whileLoop
+print This is the Infinite loop
+if(1==1) then
+  goto whileLoop
+endif
+
+label forSetup
+cls
+print Select starting index
+get f_LoopIndex
+print Select the max
+get f_LoopMax
+goto forLoop
+
+label forLoop
+if f_LoopIndex < f_LoopMax then
+  math f_LoopIndex + 1 f_LoopIndex
+  print f_LoopIndex
+  goto forLoop
+endif

@@ -1,0 +1,57 @@
+cls
+
+rem This code is obviously used for
+rem Getting values
+
+label main
+print Input value (A)
+get a
+print Input value (B)
+
+
+get b
+print Select the operator:
+print 1 - (+)
+print 2 - (-)
+print 3 - (*)
+print 4 - (/)
+get operator
+
+rem Here we have the beautiful if statements
+
+if operator == 1 then
+  print You chose addition!
+  math a + b result
+else
+  if operator == 2 then
+    print You chose subtraction!
+    math a - b result
+  else
+    if operator == 3 then
+      print You chose multiplication!
+      math a * b result
+    else
+      if operator == 4 then
+        print You chose division!
+        math a / b result
+      else
+        delete a
+	delete b
+	delete operator
+        exit
+      endif
+    endif
+  endif
+endif
+
+
+rem Here we print the result and
+rem clear the variables from memory
+
+print The result is:
+print result
+delete a
+delete b
+delete operator
+delete result
+goto main

@@ -1,0 +1,23 @@
+cls
+set func_param_x 10
+
+label main
+if func_param_x <= 0 then
+  print You killed the boss!
+  exit
+endif
+print How much you wanna decrease the damage?
+get damage
+goto func_damage
+
+label func_damage
+math func_param_x - damage func_param_x
+print You dealt this amount of damage
+print func_param_x
+goto cleanUp
+
+
+label cleanUp
+delete result
+delete damage
+goto main

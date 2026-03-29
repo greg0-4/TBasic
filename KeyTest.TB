@@ -1,0 +1,26 @@
+cls
+set x 20
+set y 10
+togglecursor
+
+label game
+
+
+  if g_TBKey == 100 then
+    math x + 1 x
+  else
+    if g_TBKey == 97 then
+      math x - 1 x
+    else
+      if g_TBKey == 119 then
+        math y - 1 y
+      else
+        if g_TBKey == 115 then
+          math y + 1 y
+        endif
+      endif
+    endif
+  endif
+  poke x y 0 15 64
+  sleep 30
+  goto game  

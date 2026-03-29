@@ -1,0 +1,34 @@
+cls
+goto menu
+
+label menu
+print This is the goto test!
+print (1) - Goto adding
+print (2) - Goto cleanup
+get choice
+
+if choice == 1 then
+  delete choice
+  goto adding
+endif
+if choice == 2 then
+  delete choice
+  goto cleanup
+endif
+
+
+label adding
+print Welcome to adding
+get a
+get b
+math a + b result
+cls
+print Your result is
+print result
+goto menu
+
+
+label cleanup
+delete a
+delete b
+delete result

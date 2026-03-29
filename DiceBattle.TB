@@ -1,0 +1,67 @@
+cls
+label menu
+set loopIndex 0
+print Welcome to my dice battle game!
+print a game where you have to win against an AI in rolling dice
+print (1) Play
+print (2) Exit
+get choice
+if choice == 1 then
+  delete choice
+  goto setup_game
+else
+  delete choice
+  exit
+endif
+
+label setup_game
+set playerScore 0
+set enemyScore 0
+cls
+print Select the amount of rounds
+get roundAmount
+print Select the amount of sides a dice will have
+get diceSides
+goto gameLoop
+
+label gameLoop
+if loopIndex >= roundAmount then
+  goto gameEnd
+endif
+
+random 1 diceSides player1
+random 1 diceSides player2
+print ================
+print Player 1:
+print player1
+print Player 2:
+print player2
+math loopIndex + 1 loopIndex
+if player1 > player2 then
+  math playerScore + 1 playerScore
+endif
+if player2 > player1 then
+  math enemyScore + 1 enemyScore
+endif
+goto gameLoop
+print If you also see this, youre also insane
+print If you see this, youre insane
+
+label gameEnd
+if playerScore > enemyScore then
+  print You win!
+endif
+if playerScore < enemyScore then
+  print You lost!
+endif
+if playerScore == enemyScore then
+  print It was a tie!
+endif
+delete loopIndex
+delete playerScore
+delete enemyScore
+delete roundAmount
+delete diceSides
+delete player1
+delete player2
+goto menu

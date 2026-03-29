@@ -1,0 +1,61 @@
+cls
+queinit TestQue
+set i 0
+set max 10
+
+label main
+print Welcome to the Que demo
+print (1) - Begin the demo
+print (2) - Exit
+get out
+if out == 1 then
+  goto loop
+else
+  goto cleanup
+endif
+
+label loop
+  if i >= max then
+    goto finish
+  endif
+  math i + 1 i
+  quepush TestQue i
+  goto loop
+
+
+label readque
+  if i >= queout then
+    goto finish
+  endif
+  print =========
+  queget TestQue i queres
+  print i
+  print queres
+  math i + 1 i
+  goto readque
+
+label finish
+print Your que has
+quecnt TestQue queout
+print queout
+print elements
+print (1) - Read Que data
+print (2) - Exit
+get out
+if out == 1 then
+  cls
+  set i 0
+  goto readque
+else
+  goto cleanup
+endif
+
+
+label cleanup
+  delete i
+  delete max
+  delete out
+  delete queout
+  delete queres
+  quedel TestQue
+  exit
