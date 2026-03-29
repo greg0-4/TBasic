@@ -2,7 +2,22 @@
 TBasic is a flavor of BASIC for TempleOS. It was made so people don't have to learn HolyC since its pretty complicated.
 I'm not saying TBasic isn't complicated either but its surely easier than HolyC.
 
-Here are some examples of code, you also have some demos i made in the TB files.
+Here are some examples of code, you also have some demos i made in the TB files. But before that, you gotta learn how to even run TBasic code.
+
+## Running TBasic
+First thing you have to do is include the Interpreter.
+```HC
+#include "Interpreter.TB";
+```
+And then you can either enter the Shell
+```HC
+TB_Shell;
+```
+or run a script
+```HC
+TB_Run("Directory");
+```
+
 ## Setting variables and printing
 The way you set variables is by doing
 ```
