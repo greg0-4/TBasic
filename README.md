@@ -212,7 +212,12 @@ To count how much elements the queue has, it sets the output as the result
 quecnt <name> <result>
 ```
 
-
+## Random
+To generate a random value with a min and max range, you will use the <b>random</b> command. Here's how you use it:
+```
+random <min> <max> <outputvalue>
+```
+To see how it's used in practice, look at the <b>DiceBattle.TB</b> demo
 
 
 
